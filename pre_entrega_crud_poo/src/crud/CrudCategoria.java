@@ -65,4 +65,19 @@ public class CrudCategoria extends CrudConsola<Categoria> {
         System.out.println(banderaEliminado ? " Categoria Eliminada" : "Categoria no encontrada");
     }
 
+    // método extra, para no comenzar en cero vamos a cargar un par de categorias
+    // por defecto
+
+    public static ArrayList<Categoria> cargarCategorias() {
+
+        ArrayList<Categoria> arrayCategorias = new ArrayList<>();
+        String nombresCategorias[] = { "Electrodomestico", "Herramienta Electrica", "Jardin", "Herramientas manual",
+                "Construcción", "Muebles",
+                "Plomeria", "Electricista", "Instalaciones", "Arreglos en general" };
+        for (String c : nombresCategorias) {
+            arrayCategorias.add(new Categoria(c));
+        }
+        return arrayCategorias;
+    }
+
 }

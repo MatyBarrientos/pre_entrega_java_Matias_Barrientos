@@ -5,21 +5,16 @@ import java.util.ArrayList;
 public class main {
     public static void main(String[] args) {
 
-        final ArrayList<Producto> arrayProductos = new ArrayList<Producto>();
-        final ArrayList<Categoria> arrayCategorias = new ArrayList<Categoria>();
+        final ArrayList<Producto> arrayProductos = CrudProducto.cargarProductos();
+        final ArrayList<Categoria> arrayCategorias = CrudCategoria.cargarCategorias();
 
-        String nombresCategorias[] = { "Tecno", "Blanqueria", "Textil", "Jardin", "Herramientas", "Libros", "Muebles",
-                "Herramientas" };
-        for (String c : nombresCategorias) {
-            arrayCategorias.add(new Categoria(c));
-        }
-
+        // instancias de mis Clases Cruds
         CrudCategoria crudCategoria = new CrudCategoria(arrayCategorias);
         CrudProducto crudProducto = new CrudProducto(arrayProductos, arrayCategorias);
 
         int opcion;
         do {
-            System.out.println("\n=== Menú Principal ===\n"
+            System.out.println("\n=== Menú Principal 'Ferreteria Talento Tech' ===\n"
                     + "1) CRUD de Productos\n"
                     + "2) CRUD de Categorías\n"
                     + "0) Salir\n");
