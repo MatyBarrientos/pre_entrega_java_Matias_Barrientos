@@ -15,8 +15,14 @@ public class CrudCategoria extends CrudConsola<Categoria> {
     public void create() {
         // throw new UnsupportedOperationException("Unimplemented method 'crete'");
         String nombreCategoria = super.leerTxt("Ingrese el nombre de la nueva 'Categoria': ");
-        categorias.add(new Categoria(nombreCategoria.toLowerCase()));
-        System.out.println("Categoria con éxito.");
+        Categoria categoria = new Categoria(nombreCategoria);
+        if (categorias.contains(categoria)) {
+            System.out.println("Categoria ya ingresada");
+        } else {
+
+            categorias.add(categoria);
+            System.out.println("Categoria con éxito.");
+        }
     }
 
     @Override
@@ -74,7 +80,10 @@ public class CrudCategoria extends CrudConsola<Categoria> {
         String nombresCategorias[] = { "Electrodomestico", "Herramienta Electrica", "Jardin", "Herramientas manual",
                 "Construcción", "Muebles" };
         for (String c : nombresCategorias) {
-            arrayCategorias.add(new Categoria(c));
+            Categoria categoria = new Categoria(c);
+            if (!arrayCategorias.contains(categoria)) {
+                arrayCategorias.add(categoria);
+            }
         }
         return arrayCategorias;
     }
