@@ -24,7 +24,7 @@ public class Servicio extends Producto {
 
     @Override
     public String toString() {
-        return super.toString() + " duración: " + this.tiempoHoras + "hs/h";
+        return super.toString() + "  duración: " + this.tiempoHoras + "hs";
     }
 
 }

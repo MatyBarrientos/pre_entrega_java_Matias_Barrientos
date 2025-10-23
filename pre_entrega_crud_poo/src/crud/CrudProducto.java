@@ -132,10 +132,14 @@ public class CrudProducto extends CrudConsola<Producto> {
         ArrayList<Producto> arrayProductos = new ArrayList<>();
         ArrayList<Categoria> categoria = CrudCategoria.cargarCategorias();
 
-        // { 1"Electrodomestico", 2"Herramienta Electrica", 3"Jardin", 4"Herramientas
-        // manual",
-        // 5"Construcción", 6"Muebles",
-        // 7"Plomeria", 8"Electricista", 9"Instalaciones", 10"Arreglos en general" }
+        // 1 - "Electrodomestico"
+        // 2 - "Herramienta Electrica"
+        // 3 - "Jardin"
+        // 4 - "Herramientas manual"
+        // 5 - "Construcción"
+        // 6 - "Muebles",
+        // 7 - "Plomeria"
+
         String nombreArticulo[] = {
                 "Taladro percutor 750W", // cat 2
                 "Amoladora angular 4 1/2\"", // cat 2

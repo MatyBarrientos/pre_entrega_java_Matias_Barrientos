@@ -39,7 +39,7 @@ public abstract class Producto implements Ivendible {
 
     @Override
     public String toString() {
-        return "Producto [ID: " + this.id + ", nombre: " + this.nombreProducto + ", precioProducto: "
-                + this.precioProducto + "]";
+        return "ID: " + this.id + " || Nombre: " + this.nombreProducto + " || precio: $"
+                + this.precioProducto + " || ";
     }
 }

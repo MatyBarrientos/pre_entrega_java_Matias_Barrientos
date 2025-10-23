@@ -15,8 +15,8 @@ public class main {
         int opcion;
         do {
             System.out.println("\n=== Menú Principal 'Ferreteria Talento Tech' ===\n"
-                    + "1) CRUD de Productos\n"
-                    + "2) CRUD de Categorías\n"
+                    + "1 - CRUD de Productos\n"
+                    + "2 - CRUD de Categorías\n"
                     + "0) Salir\n");
             int linea = crudCategoria.leerInt("Seleccione una opción: ");
             opcion = linea;

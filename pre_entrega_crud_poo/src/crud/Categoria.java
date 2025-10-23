@@ -24,7 +24,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Categoria [id: " + this.idCategoria + ",nombre: " + this.nombreCategoria + "]";
+        return "  Categoria : " + this.nombreCategoria + " || ID " + this.idCategoria;
     }
 
 }

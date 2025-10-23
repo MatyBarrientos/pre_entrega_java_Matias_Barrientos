@@ -72,8 +72,7 @@ public class CrudCategoria extends CrudConsola<Categoria> {
 
         ArrayList<Categoria> arrayCategorias = new ArrayList<>();
         String nombresCategorias[] = { "Electrodomestico", "Herramienta Electrica", "Jardin", "Herramientas manual",
-                "Construcción", "Muebles",
-                "Plomeria", "Electricista", "Instalaciones", "Arreglos en general" };
+                "Construcción", "Muebles" };
         for (String c : nombresCategorias) {
             arrayCategorias.add(new Categoria(c));
         }
