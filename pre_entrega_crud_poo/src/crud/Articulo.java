@@ -24,6 +24,7 @@ public class Articulo extends Producto {
 
     @Override
     public String toString() {
-        return super.toString(); // continuar desarrollo.
+        String nombreCategoria = this.categoria != null ? categoria.getNombre() : "Sin categoria";
+        return super.toString() + "Categoria : [" + nombreCategoria + "]";
     }
 }
