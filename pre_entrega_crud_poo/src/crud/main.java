@@ -16,23 +16,23 @@ public class main {
 
         CrudCategoria crudCategoria = new CrudCategoria(arrayCategorias);
         CrudProducto crudProducto = new CrudProducto(arrayProductos, arrayCategorias);
-        // crudCategoria.read();
-        while (true) {
+
+        int opcion;
+        do {
             System.out.println("\n=== Menú Principal ===\n"
                     + "1) CRUD de Productos\n"
                     + "2) CRUD de Categorías\n"
                     + "0) Salir\n");
-            int opcion = crudCategoria.leerInt("Seleccione una opción");
-            if (opcion == 0)
-                break;
-
+            int linea = crudCategoria.leerInt("Seleccione una opción: ");
+            opcion = linea;
+            int opcionCrud;
             switch (opcion) {
                 case 1 -> {
 
                     do {
                         crudProducto.mostrarOpciones();
-                        opcion = crudProducto.leerInt("");
-                        switch (opcion) {
+                        opcionCrud = crudProducto.leerInt("");
+                        switch (opcionCrud) {
                             case 1 -> crudProducto.create();
                             case 2 -> crudProducto.read();
                             case 3 -> crudProducto.update();
@@ -40,14 +40,14 @@ public class main {
                             case 0 -> System.out.println("Volviendo al menú principal...");
                             default -> System.out.println("Opción inválida");
                         }
-                    } while (opcion != 0);
+                    } while (opcionCrud != 0);
                 }
                 case 2 -> {
 
                     do {
                         crudCategoria.mostrarOpciones();
-                        opcion = crudCategoria.leerInt("");
-                        switch (opcion) {
+                        opcionCrud = crudCategoria.leerInt("");
+                        switch (opcionCrud) {
                             case 1 -> crudCategoria.create();
                             case 2 -> crudCategoria.read();
                             case 3 -> crudCategoria.update();
@@ -55,12 +55,15 @@ public class main {
                             case 0 -> System.out.println("Volviendo al menú principal...");
                             default -> System.out.println("Opción inválida");
                         }
-                    } while (opcion != 0);
+                    } while (opcionCrud != 0);
                 }
-                case 0 -> System.out.println("¡Hasta luego!");
+                case 0 -> {
+                    System.out.println("¡Hasta luego!");
+                    break;
+                }
                 default -> System.out.println("Opción inválida");
             }
 
-        }
+        } while (opcion != 0);
     }
 }

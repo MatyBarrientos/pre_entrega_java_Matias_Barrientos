@@ -1,6 +1,7 @@
 package crud;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CrudProducto extends CrudConsola<Producto> {
 
@@ -112,10 +113,14 @@ public class CrudProducto extends CrudConsola<Producto> {
     public void delete() {
         int idProducto = super.leerInt("Ingrese el 'ID' de la categoria a eliminar: ");
         boolean banderaEliminado = false;
-        for (Producto producto : productos) {
-            if (producto.getId() == idProducto)
+        Iterator<Producto> it = productos.iterator();
+        while (it.hasNext()) {
+            Producto producto = it.next();
+            if (producto.getId() == idProducto) {
+                it.remove();
                 banderaEliminado = true;
-            productos.remove(producto);
+                break;
+            }
         }
         System.out.println(banderaEliminado ? " Producto eliminado" : "Producto no encontrado");
     }

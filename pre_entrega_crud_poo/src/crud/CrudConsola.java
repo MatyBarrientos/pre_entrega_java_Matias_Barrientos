@@ -31,11 +31,11 @@ public abstract class CrudConsola<T> {
     protected int leerInt(String mjs) {
         while (true) {
             try {
-                System.out.println(mjs);
+                System.out.print(mjs);
                 String linea = scan.nextLine();
-                return Integer.parseInt(linea.trim());
+                return Integer.parseInt(linea);
             } catch (NumberFormatException e) {
-                System.out.println("Solo números enteros, por favor");
+                System.out.print("Solo números enteros, por favor");
                 e.printStackTrace();
             }
         }
@@ -44,11 +44,11 @@ public abstract class CrudConsola<T> {
     protected double leerDouble(String mjs) {
         while (true) {
             try {
-                System.out.println(mjs);
+                System.out.print(mjs);
                 String linea = scan.nextLine();
-                return Double.parseDouble(linea.trim());
+                return Double.parseDouble(linea);
             } catch (NumberFormatException e) {
-                System.out.println("En decimal por favor, por favor");
+                System.out.print("En decimal por favor, por favor");
                 e.printStackTrace();
                 ;
             }
@@ -56,7 +56,7 @@ public abstract class CrudConsola<T> {
     }
 
     protected String leerTxt(String mjs) {
-        System.out.println(mjs);
+        System.out.print(mjs);
         return scan.nextLine();
     }
 

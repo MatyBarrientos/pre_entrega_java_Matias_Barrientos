@@ -1,6 +1,7 @@
 package crud;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CrudCategoria extends CrudConsola<Categoria> {
 
@@ -13,7 +14,7 @@ public class CrudCategoria extends CrudConsola<Categoria> {
     @Override
     public void create() {
         // throw new UnsupportedOperationException("Unimplemented method 'crete'");
-        String nombreCategoria = super.leerTxt("Ingrese el nombre de la nueva 'Categoria'");
+        String nombreCategoria = super.leerTxt("Ingrese el nombre de la nueva 'Categoria': ");
         categorias.add(new Categoria(nombreCategoria.toLowerCase()));
         System.out.println("Categoria con éxito.");
     }
@@ -40,9 +41,8 @@ public class CrudCategoria extends CrudConsola<Categoria> {
                 categoria.setNombre(nuevoNombre);
                 System.out.println("Actualización exitosa. " + categoria.toString());
                 return;
-            } else {
-                System.out.println("ID: " + idCategoria + " no encontrado en el almacen de 'Categorias'");
             }
+            System.out.println("ID: " + idCategoria + " no encontrado en el almacen de 'Categorias'");
         }
 
     }
@@ -52,10 +52,15 @@ public class CrudCategoria extends CrudConsola<Categoria> {
         // throw new UnsupportedOperationException("Unimplemented method 'delete'");
         int idCategoria = super.leerInt("Ingrese el 'ID' de la categoria a eliminar: ");
         boolean banderaEliminado = false;
-        for (Categoria categoria : categorias) {
-            if (categoria.getId() == idCategoria)
+        Iterator<Categoria> it = categorias.iterator(); // los iterator conozco y se me es familiar, puedo borrar
+                                                        // elementos mientras recorro.
+        while (it.hasNext()) {
+            Categoria categoria = it.next();
+            if (categoria.getId() == idCategoria) {
+                it.remove();
                 banderaEliminado = true;
-            categorias.remove(categoria.getId());
+                break;
+            }
         }
         System.out.println(banderaEliminado ? " Categoria Eliminada" : "Categoria no encontrada");
     }
